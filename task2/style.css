@@ -1,0 +1,70 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background: #d9ecf7; color: #2b2b2b; }
+header { text-align: center; padding: 14px 10px 4px; }
+header h1 { margin: 0; font-size: 26px; }
+header p { margin: 4px 0 0; color: #555; font-size: 14px; }
+
+#cases { max-width: 1100px; margin: 10px auto; padding: 0 10px; display: flex; flex-wrap: wrap; gap: 6px; }
+.case-btn { border: 1px solid #1d4e9e; background: #fff; color: #1d4e9e; border-radius: 8px;
+  padding: 6px 10px; font-size: 13px; cursor: pointer; }
+.case-btn:hover { background: #eaf1ff; }
+.case-btn.active { background: #1d4e9e; color: #fff; }
+
+#info { max-width: 1100px; margin: 0 auto 10px; padding: 0 10px; }
+#result { background: #fff; border-left: 5px solid #f0a91a; padding: 10px 12px; border-radius: 6px; font-size: 15px; min-height: 44px; }
+#chain { background: #1e1e2e; color: #cdd6f4; padding: 10px 12px; border-radius: 6px; font-size: 13px;
+  overflow: auto; white-space: pre-wrap; margin: 8px 0 0; }
+
+#house { max-width: 1100px; margin: 0 auto 30px; padding: 0 10px; }
+.floor { display: flex; background: #5b3a29; padding: 4px; margin-bottom: 6px; border-radius: 6px; }
+.floor-label { writing-mode: vertical-rl; width: 34px; background: #e8cfae; font-weight: 700; font-size: 12px;
+  letter-spacing: 3px; display: flex; align-items: center; justify-content: center; border-radius: 4px; }
+.rooms { flex: 1; display: flex; gap: 4px; margin-left: 4px; }
+.room { flex: 1 1 0; min-width: 0; background: #fffaf0; padding: 8px 8px 4px; position: relative; border-radius: 4px; }
+.room[data-room="Balcony"] { background: #e3f0fb; }
+.room[data-room="Hall"] { background: #fbf1dc; }
+.room[data-room="Kitchen"] { background: #f4f9f1; }
+.room[data-room="Living room"] { background: #fff7ea; }
+.room.found { outline: 4px solid #f0a91a; }
+.room-name { margin: 0 0 8px; font-size: 15px; }
+.guests { display: flex; flex-wrap: wrap; align-items: flex-start; min-height: 110px; }
+
+.guest { position: relative; left: 0; top: 0; flex: 0 0 auto; width: 72px; margin: 0 3px 6px;
+  text-align: center; white-space: nowrap; }
+.ring { width: 58px; height: 58px; margin: 0 auto; border: 3px solid #999; border-radius: 50%; background: #fff; position: relative; }
+.ring img { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.badge { position: absolute; top: -4px; right: -6px; width: 20px; height: 20px; border-radius: 50%;
+  background: #1d4e9e; color: #fff; font-size: 11px; line-height: 20px; text-align: center; }
+.g-name { font-size: 12px; font-weight: 700; margin-top: 3px; }
+.g-time { font-size: 11px; color: #666; }
+.g-things { display: flex; justify-content: center; gap: 1px; font-size: 13px; min-height: 18px; }
+
+.color-red .ring { border-color: #e63946; }
+.color-blue .ring { border-color: #3a6fd8; }
+.color-green .ring { border-color: #2e9d5b; }
+.color-black .ring { border-color: #222; }
+.color-yellow .ring { border-color: #f0a91a; }
+.color-purple .ring { border-color: #8e5bd1; }
+
+.guest.found .ring { box-shadow: 0 0 0 4px rgba(255, 200, 0, .9), 0 0 16px 4px rgba(255, 190, 0, .8); }
+
+/* ---------- Task 2 additions ---------- */
+.room-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.room-head .room-name { margin: 0; }
+.sort-btn, .tool-btn { border: 1px solid #1d4e9e; background: #fff; color: #1d4e9e; border-radius: 6px;
+  padding: 3px 8px; font-size: 12px; cursor: pointer; }
+.sort-btn:hover, .tool-btn:hover { background: #eaf1ff; }
+.guest { cursor: pointer; }
+.fly { pointer-events: none; text-align: center; white-space: nowrap; width: 72px; }
+.guest-card { position: absolute; z-index: 2000; width: 270px; background: #fff; border: 2px solid #1d4e9e;
+  border-radius: 14px; box-shadow: 0 12px 40px rgba(0,0,0,.35); overflow: hidden; }
+.card-body { width: 266px; padding: 14px; }
+.card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.card-avatar { width: 54px; height: 54px; border-radius: 50%; background: #eee; }
+.card-head h4 { margin: 0; font-size: 18px; }
+.muted { color: #666; font-size: 13px; }
+.card-body ul { margin: 6px 0 10px; padding-left: 18px; font-size: 14px; line-height: 1.5; }
+.moves { display: flex; flex-direction: column; gap: 5px; }
+.move-btn { border: 1px solid #1d4e9e; background: #eaf1ff; color: #1d4e9e; border-radius: 6px;
+  padding: 5px 8px; font-size: 13px; cursor: pointer; text-align: left; }
+.move-btn:hover { background: #d3e2ff; }
